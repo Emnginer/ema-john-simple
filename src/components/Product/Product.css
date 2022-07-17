@@ -10,13 +10,28 @@
     color: blue;
     font-weight: 400; 
   
-}
-.product button{
-    width:200px;
-    background-color: yellow;
+}     
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #c21500 0%, #ffc500  51%, #c21500  100%);
+    margin: 10px;
+    padding: 12px 38px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
     border:none;
-    padding:8px;
-    cursor: pointer;
-    border: 1px solid darkgoldenrod
-    
-}
+    text-decoration:none
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+ 
