@@ -5,18 +5,17 @@ import fakeData from '../../fakeData';
 import { clearTheCart, deleteFromDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import happyImage from '../../images/giphy.gif'
 
 const Review = () => {
     const [reviewCart, setReviewCart] = useState([]);
     const [orderPlaced, setOrderPlaced] = useState(false);
 
+    const navigate = useNavigate()
+
     const handlePlaceOrder = () => {
-        console.log('Order placed')
-        setReviewCart([]);
-        clearTheCart();
-        setOrderPlaced(true)
+        navigate('/shipment')
     };
 
     const removeProduct = (productKey) => {
@@ -67,9 +66,10 @@ const Review = () => {
             </div>
             <div className="cart-container">
                 <Cart cart={reviewCart}>
-                    <Link to='/review' style={{textDecoration: 'none'}}>
-                        <button className='btn-grad' onClick={handlePlaceOrder}>Place Order</button>
-                    </Link>
+                    {/* <Link to='/review' style={{textDecoration: 'none'}}> */}
+                        <button className='btn-grad' onClick={handlePlaceOrder}>Proceed Checkout</button>
+                        {/* using navigate instead of Link */}
+                    {/* </Link> */}
 
                 </Cart>
             </div>
